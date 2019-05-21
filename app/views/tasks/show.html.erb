@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1><%= @task.title %></h1>
+    <%= link_to '<i class="fas fa-pen"></i>Edit this task'.html_safe, edit_task_path, class: "btn btn-light mb-2" %>
+  </div>
+  <div class="alert alert-secondary">
+    <%= @task.details %>
+  </div>
+
+  <div>
+    <% if @task.completed %>
+      <span><i class="fas fa-check-circle"></i> This task is completed</span>
+    <% else %>
+      <span><i class="far fa-circle"></i> This task is not completed yet</span>
+    <% end %>
+  </div>
+
+  <%= link_to "Back to list", tasks_path %>
+</div>
